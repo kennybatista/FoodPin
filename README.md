@@ -1,3 +1,3 @@
 # FoodPin : Swift
 
-![screenshot](https://github.com/kennybatista/Customized-Table-View-Using-Prototype-Cell/blob/master/screenshot.png)
+![screenshot](https://github.com/kennybatista/FoodPin/blob/master/screenshot.png)
