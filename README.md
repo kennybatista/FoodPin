@@ -1,6 +1,5 @@
-#Customized-Table-View-Using-Prototype-Cell: Swift
-##100 day project challenge
-#Day 23
+#FoodPin : Swift
+
 
 Intructions:
 - cd into repository
