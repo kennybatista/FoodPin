@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pGR-yJ-OsS" id="tIx-AE-hu6">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="al0-Cc-JeV">
@@ -80,31 +80,18 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XbR-5c-aA9">
                                 <rect key="frame" x="-4" y="137" width="328" height="250"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0l5-29-h2u">
-                                <rect key="frame" x="73" y="64" width="175" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="tfD-Ke-6bC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XbR-5c-aA9" firstAttribute="top" secondItem="o6K-iz-C0a" secondAttribute="bottom" constant="73" id="Eec-gw-JtI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XbR-5c-aA9" secondAttribute="trailing" constant="-20" id="FwF-cA-mKU"/>
-                            <constraint firstItem="XbR-5c-aA9" firstAttribute="top" secondItem="0l5-29-h2u" secondAttribute="bottom" constant="52" id="Rtj-Fe-gJ8"/>
-                            <constraint firstItem="0l5-29-h2u" firstAttribute="centerX" secondItem="rCY-Cg-SFn" secondAttribute="centerX" id="cuY-ot-PFB"/>
                             <constraint firstItem="UUO-P4-pgg" firstAttribute="top" secondItem="XbR-5c-aA9" secondAttribute="bottom" constant="181" id="pUL-rM-BAz"/>
                             <constraint firstItem="XbR-5c-aA9" firstAttribute="leading" secondItem="rCY-Cg-SFn" secondAttribute="leadingMargin" constant="-20" id="ti8-IH-NzO"/>
-                            <constraint firstItem="0l5-29-h2u" firstAttribute="top" secondItem="o6K-iz-C0a" secondAttribute="bottom" id="wDc-aO-6OF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AbP-xj-1LV"/>
                     <connections>
-                        <outlet property="restaurantImageView" destination="XbR-5c-aA9" id="aUr-ZR-81j"/>
-                        <outlet property="restaurantNameLabel" destination="0l5-29-h2u" id="nUf-Y0-3ph"/>
+                        <outlet property="restaurantImageView" destination="XbR-5c-aA9" id="VXt-xU-pdV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phe-Nk-PAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
