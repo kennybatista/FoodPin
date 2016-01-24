@@ -12,12 +12,28 @@ class DetailViewController: UIViewController {
     
     @IBOutlet var restaurantImageView : UIImageView!
     var restaurantImage : String!
+    
+    @IBOutlet var detailNameLabel : UILabel!
+    var theDetailNameLabel : String!
+    
+    @IBOutlet var detailLocationLabel : UILabel!
+    var theDetailLocationLabel : String!
+    
+    @IBOutlet var detailTypeLabel : UILabel!
+     var theDetailTypeLabel : String!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Will update the image view after the image's data has been passed to the detail.
-        self.restaurantImageView.image = UIImage(named: restaurantImage)
+        self.restaurantImageView!.image = UIImage(named: restaurantImage)
+        
+        self.detailNameLabel.text = theDetailNameLabel
+        
+        self.detailLocationLabel.text = theDetailLocationLabel
+        
+        self.detailTypeLabel.text = theDetailTypeLabel
 
         // Do any additional setup after loading the view.
     }

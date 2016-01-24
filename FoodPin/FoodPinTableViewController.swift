@@ -218,7 +218,7 @@ class FoodPinTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-//     In a storyboard-based application, you will often want to do a little preparation before navigation
+////     In a storyboard-based application, you will often want to do a little preparation before navigation
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        // Get the new view controller using segue.destinationViewController.
 //        if segue.identifier == "showRestaurantDetail" {
@@ -235,14 +235,19 @@ class FoodPinTableViewController: UITableViewController {
     //PrepareForSegue pseudocode
     //1. override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){} -- in charge of passing the data from a to b
     //2. if segue.identifier == "showRestaurantDetail" {} -- if this segue exists do this
+    //3. select the path of where the data is
+    //4. 
     
     
+    // Through this segue, pass the data in this controller to that controller
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showRestaurantDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow{
+            if let indexPath = self.tableView.indexPathForSelectedRow {
                 let destinationController = segue.destinationViewController as! DetailViewController
                 destinationController.restaurantImage = self.restaurantImages[indexPath.row]
-                
+                destinationController.theDetailNameLabel = self.restaurantNames[indexPath.row]
+                destinationController.theDetailLocationLabel = self.restaurantLocations[indexPath.row]
+                destinationController.theDetailTypeLabel = self.restaurantTypes[indexPath.row]
             }
         }
     }
