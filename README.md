@@ -1,3 +1,3 @@
 # FoodPin : Swift
-##Learning from AppCoda.com
+##Learning @ AppCoda.com
 ![screenshot](https://github.com/kennybatista/FoodPin/blob/master/screenshot.png)
