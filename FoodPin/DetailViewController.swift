@@ -14,6 +14,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var restaurant : Restaurant!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func close(segue: UIStoryboardSegue) {
+        
+    }
        
 
     override func viewDidLoad() {
