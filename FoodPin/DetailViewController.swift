@@ -8,34 +8,26 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var restaurantImageView : UIImageView!
-    var restaurantImage : String!
+    var restaurant : Restaurant!
     
-    @IBOutlet var detailNameLabel : UILabel!
-    var theDetailNameLabel : String!
-    
-    @IBOutlet var detailLocationLabel : UILabel!
-    var theDetailLocationLabel : String!
-    
-    @IBOutlet var detailTypeLabel : UILabel!
-     var theDetailTypeLabel : String!
-    
+    @IBOutlet weak var tableView: UITableView!
+       
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Will update the image view after the image's data has been passed to the detail.
-        self.restaurantImageView!.image = UIImage(named: restaurantImage)
+        self.restaurantImageView!.image = UIImage(named: restaurant.image)
+//        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: self.restaurant.name, style: .Plain, target: nil, action: nil)
+        title = self.restaurant.name
+      
+        tableView.estimatedRowHeight = 36.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         
-        self.detailNameLabel.text = theDetailNameLabel
         
-        self.detailLocationLabel.text = theDetailLocationLabel
-        
-        self.detailTypeLabel.text = theDetailTypeLabel
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,15 +35,52 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
     }
-    */
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! DetailTableViewCell
+        cell.backgroundColor = UIColor.clearColor()
+        
+        
+        
+        //configure the cell
+        switch indexPath.row {
+        case 0:
+            cell.fieldLabel.text = "Name"
+            cell.fieldValue.text = restaurant.name
+        case 1:
+            cell.fieldLabel.text = "Type"
+            cell.fieldValue.text = restaurant.type
+        case 2:
+            cell.fieldLabel.text = "Location"
+            cell.fieldValue.text = restaurant.location
+        case 3:
+            cell.fieldLabel.text = "Been Here"
+            cell.fieldValue.text = (restaurant.isVisited) ? "Yes, I've been here before" : "No"
+        default:
+            cell.fieldLabel.text = ""
+            cell.fieldValue.text = ""
+        }
+        
+        return cell
+    }
+    
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.hidesBarsOnSwipe = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+//        return .LightContent
+//    }
+    
 
 }
