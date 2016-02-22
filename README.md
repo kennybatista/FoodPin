@@ -1,6 +1,6 @@
 # FoodPin : Swift Lang
 
-#Still working on it**
+#80% Done
 
 | Topics Being Covered |
 | -------------------- | 
@@ -11,9 +11,9 @@
 | 5.Table Row Deletion* |
 | 6.Navigation Controller* |
 | 7.Object Oriented Programming* |
-| 8.Detail View |
-| 9.Self Sizing Cells |
-| 10.Animation & Visual Effects |
+| 8.Detail View* |
+| 9.Self Sizing Cells* |
+| 10.Animation & Visual Effects* |
 | 11.Maps |
 | 12.Static Table View & UIImagePickerController |
 | 13.Core Data |
