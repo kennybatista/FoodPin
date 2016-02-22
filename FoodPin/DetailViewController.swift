@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    
     @IBOutlet var restaurantImageView : UIImageView!
     var restaurant : Restaurant!
     
@@ -32,6 +34,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.rowHeight = UITableViewAutomaticDimension
         
         
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +52,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! DetailTableViewCell
         cell.backgroundColor = UIColor.clearColor()
+        cell.mapButton.hidden = true
         
         
         
@@ -63,6 +67,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case 2:
             cell.fieldLabel.text = "Location"
             cell.fieldValue.text = restaurant.location
+            cell.mapButton.hidden = false
         case 3:
             cell.fieldLabel.text = "Been Here"
             cell.fieldValue.text = (restaurant.isVisited) ? "Yes, I've been here before" : "No"
