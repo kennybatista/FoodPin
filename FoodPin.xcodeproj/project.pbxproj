@@ -20,6 +20,7 @@
 		25775A901C4ACE790036A759 /* FoodPinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25775A8F1C4ACE790036A759 /* FoodPinTableViewController.swift */; };
 		25C126241C7A7A4F00302E75 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C126231C7A7A4F00302E75 /* DetailTableViewCell.swift */; };
 		25C126281C7AD6C500302E75 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C126271C7AD6C500302E75 /* ReviewViewController.swift */; };
+		25C1266F1C7D816C00302E75 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C1266E1C7D816C00302E75 /* ShareViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		25775A8F1C4ACE790036A759 /* FoodPinTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodPinTableViewController.swift; sourceTree = "<group>"; };
 		25C126231C7A7A4F00302E75 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		25C126271C7AD6C500302E75 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		25C1266E1C7D816C00302E75 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				25775A8F1C4ACE790036A759 /* FoodPinTableViewController.swift */,
 				25165E421C52B04D00BA4D54 /* DetailViewController.swift */,
 				25C126271C7AD6C500302E75 /* ReviewViewController.swift */,
+				25C1266E1C7D816C00302E75 /* ShareViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				250D136C1C4C910A00DBE092 /* CustomTableViewCell.swift in Sources */,
 				25775A901C4ACE790036A759 /* FoodPinTableViewController.swift in Sources */,
 				25775A621C4ACDB20036A759 /* AppDelegate.swift in Sources */,
+				25C1266F1C7D816C00302E75 /* ShareViewController.swift in Sources */,
 				25165E431C52B04D00BA4D54 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

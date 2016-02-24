@@ -23,23 +23,24 @@ class ReviewViewController: UIViewController {
         backgroundImageView.addSubview(blurEffectView)
         
         
-        //Start state
-        dialogView.transform = CGAffineTransformMakeScale(0.0, 0.0)
+  //Start state
+        let scale = CGAffineTransformMakeScale(0, 0)
+        let translate = CGAffineTransformMakeTranslation(0, 500)
+        dialogView.transform = CGAffineTransformConcat(scale, translate)
     }
     
+    
+    //end state viewdidappear
     override func viewDidAppear(animated: Bool) {
-        
-        
-        
-        UIView.animateWithDuration(0.7, animations:  {
-            self.dialogView.transform = CGAffineTransformMakeScale(1, 1)
+        UIView.animateWithDuration(0.7, animations: {
+            let scale = CGAffineTransformMakeScale(1, 1)
+            let translation = CGAffineTransformMakeTranslation(0, 0)
+            self.dialogView.transform = CGAffineTransformConcat(scale, translation)
         })
-        
-        
-//        UIView.animateWithDuration(0.7, usingSpringWithDamping: 0.5, initialVelocity: 0.5, animations:  {
-//            self.dialogView.transform = CGAffineTransformMakeScale(1, 1)
-//        })
     }
+   
+    
+
 
 
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OR8-9J-czh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OR8-9J-czh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pGR-yJ-OsS" id="tIx-AE-hu6">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZ7-hT-9Du">
@@ -169,7 +169,11 @@
                                 <rect key="frame" x="-4" y="524" width="328" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="fj8-YS-zJj"/>
-                                    <barButtonItem systemItem="action" id="SOK-Uy-AyA"/>
+                                    <barButtonItem systemItem="action" id="SOK-Uy-AyA">
+                                        <connections>
+                                            <segue destination="Fwu-xY-QGi" kind="modal" id="o7E-kf-dWt"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="bQg-n2-3z1"/>
                                     <barButtonItem systemItem="compose" id="6h0-S4-aPj">
                                         <connections>
@@ -230,7 +234,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="In0-tt-8tx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1600.5" y="129.5"/>
+            <point key="canvasLocation" x="1591.5" y="-30.5"/>
+        </scene>
+        <!--Share View Controller-->
+        <scene sceneID="eWE-8x-77h">
+            <objects>
+                <viewController id="Fwu-xY-QGi" customClass="ShareViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ovi-sZ-Ldp"/>
+                        <viewControllerLayoutGuide type="bottom" id="gjU-kJ-db6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xyS-EA-8EE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cafeloisl" translatesAutoresizingMaskIntoConstraints="NO" id="PV3-TQ-qbB">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZP-12-kpu">
+                                <rect key="frame" x="324" y="28" width="43" height="44"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <segue destination="U9f-QU-0WR" kind="unwind" unwindAction="close:" id="DAv-xC-h1H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFk-93-1FR">
+                                <rect key="frame" x="125" y="163" width="64" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="facebook"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8Q-m8-M7p">
+                                <rect key="frame" x="125" y="235" width="64" height="64"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="email"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDn-ka-bic">
+                                <rect key="frame" x="197" y="163" width="64" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="twitter"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhG-Cr-9ag">
+                                <rect key="frame" x="197" y="235" width="64" height="64"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="message"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="PV3-TQ-qbB" id="MQa-29-96v"/>
+                        <outlet property="facebookButton" destination="eFk-93-1FR" id="lkL-xW-HbH"/>
+                        <outlet property="mailButton" destination="o8Q-m8-M7p" id="OXr-KC-tvZ"/>
+                        <outlet property="messageButton" destination="vhG-Cr-9ag" id="25P-8L-xEK"/>
+                        <outlet property="twitterButton" destination="cDn-ka-bic" id="Mvt-ad-cHT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ky-Tv-b1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="U9f-QU-0WR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="974.5" y="1248.5"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="aY9-jg-HVf">
@@ -311,7 +375,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cfb-Ou-tMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FGw-Ah-xqh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1600.5" y="881.5"/>
+            <point key="canvasLocation" x="1406.5" y="1239.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GKS-Zy-jqy">
@@ -341,7 +405,11 @@
         <image name="bourkestreetbakery" width="640" height="640"/>
         <image name="cafeloisl" width="640" height="640"/>
         <image name="close" width="64" height="64"/>
+        <image name="email" width="64" height="64"/>
+        <image name="facebook" width="64" height="64"/>
         <image name="good" width="64" height="64"/>
         <image name="great" width="64" height="64"/>
+        <image name="message" width="64" height="64"/>
+        <image name="twitter" width="64" height="64"/>
     </resources>
 </document>
