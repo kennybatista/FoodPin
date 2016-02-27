@@ -10,6 +10,9 @@ import UIKit
 
 class FoodPinTableViewController: UITableViewController {
     
+    @IBAction func undwindSegue(segue: UIStoryboardSegue){
+        
+    }
     
     var restaurants:[Restaurant] = [
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "G/F, 72 Po HingFong, Sheung Wan, Hong Kong", image: "cafedeadend.jpg", isVisited: true),
@@ -227,6 +230,9 @@ class FoodPinTableViewController: UITableViewController {
     //2. if segue.identifier == "showRestaurantDetail" {} -- if this segue exists do this
     //3. select the path of where the data is
     //4. 
+    
+    
+
     
     
     // Through this segue, pass the data in this controller to that controller

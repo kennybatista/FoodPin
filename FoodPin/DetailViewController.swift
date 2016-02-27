@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
@@ -20,6 +21,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func close(segue: UIStoryboardSegue) {
         
     }
+    
+   
+    
        
 
     override func viewDidLoad() {
@@ -36,6 +40,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
     }
+    
+     
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
