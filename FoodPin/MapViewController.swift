@@ -19,44 +19,102 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view.
         //Forward Geocoding: Converting physical addresses into coordinates
         
-      let geoCoder = CLGeocoder()
+             
+        let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString("436 beach 72nd street, arverne, ny, 11692", completionHandler: {
-            placemarks, error in
-            let placemark = CLPlacemark()
-            let coordinate = placemark.location?.coordinate
+            (placemarks, error) in
+//            let placemark = CLPlacemark()
+//            let coordinate = placemark.location?.coordinate
             
-            
-            
-            let annotation = MKPointAnnotation()
-            annotation.title = "Times Square"
-            annotation.coordinate = (placemark.location?.coordinate)!
-            
-            self.mapView.showAnnotations([annotation], animated: true)
-            self.mapView.selectAnnotation(annotation, animated: true)
-            
-            
+            if error != nil {
+                print("Geocode failded with error: \(error?.localizedDescription)")
+            } else {
+                if placemarks!.count > 0 {
+                    let placemark = placemarks![0] 
+                    print(placemark.location?.coordinate.latitude);
+                    
+                    
+                    
+                    let annotation = MKPointAnnotation()
+                    annotation.title = "Kenny'Home"
+                    annotation.coordinate = (placemark.location?.coordinate)!
+                    
+                    
+                    self.mapView.showAnnotations([annotation], animated: true)
+                    self.mapView.selectAnnotation(annotation, animated: true)
+                }
+            }
         })
         
-      
+        
+     
+
+        
+//            if error != nil {
+//                
+//            } else {
+//                let placemark = CLPlacemark()
+//                var coordinate = placemark.location?.coordinate
+//                
+//                let annotation = MKPointAnnotation()
+//                annotation.title = "Kenny'Home"
+//                annotation.coordinate = (placemark.location?.coordinate)!
+//                
+//                
+//                self.mapView.showAnnotations([annotation], animated: true)
+//                self.mapView.selectAnnotation(annotation, animated: true)
+//            }
+        
+//            let annotation = MKPointAnnotation()
+//            annotation.title = "Times Square"
+////            annotation.coordinate = (placemark.location?.coordinate)!
+//            
+//            self.mapView.showAnnotations([annotation], animated: true)
+//            self.mapView.selectAnnotation(annotation, animated: true)
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+        
+        
+
         
     }
-    
-    
+//    
+//    geoCoder.geocodeAddressString(addressString, completionHandler:
+//    {(placemarks: [AnyObject]!, error: NSError!) in
+//    
+//    if error != nil {
+//    println("Geocode failed with error: \(error.localizedDescription)")
+//    } else if placemarks.count > 0 {
+//    let placemark = placemarks[0] as! CLPlacemark
+//    
+//    
+//    println(placemark.location.coordinate.latitude);
+//    
+//    
+//    
+//    
+//    
+//    }
+//    })
+//    
+//    
+//}
+
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
