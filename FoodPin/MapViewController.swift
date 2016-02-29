@@ -12,6 +12,7 @@ import MapKit
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
+    var restaurant: Restaurant!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +34,9 @@ class MapViewController: UIViewController {
                     let placemark = placemarks![0] 
                     print(placemark.location?.coordinate.latitude);
                     
-                    
-                    
                     let annotation = MKPointAnnotation()
                     annotation.title = "Kenny'Home"
                     annotation.coordinate = (placemark.location?.coordinate)!
-                    
                     
                     self.mapView.showAnnotations([annotation], animated: true)
                     self.mapView.selectAnnotation(annotation, animated: true)
@@ -46,32 +44,7 @@ class MapViewController: UIViewController {
             }
         })
         
-        
-     
-
-        
-//            if error != nil {
-//                
-//            } else {
-//                let placemark = CLPlacemark()
-//                var coordinate = placemark.location?.coordinate
-//                
-//                let annotation = MKPointAnnotation()
-//                annotation.title = "Kenny'Home"
-//                annotation.coordinate = (placemark.location?.coordinate)!
-//                
-//                
-//                self.mapView.showAnnotations([annotation], animated: true)
-//                self.mapView.selectAnnotation(annotation, animated: true)
-//            }
-        
-//            let annotation = MKPointAnnotation()
-//            annotation.title = "Times Square"
-////            annotation.coordinate = (placemark.location?.coordinate)!
-//            
-//            self.mapView.showAnnotations([annotation], animated: true)
-//            self.mapView.selectAnnotation(annotation, animated: true)
-            
+  
             
             
             
@@ -86,27 +59,6 @@ class MapViewController: UIViewController {
 
         
     }
-//    
-//    geoCoder.geocodeAddressString(addressString, completionHandler:
-//    {(placemarks: [AnyObject]!, error: NSError!) in
-//    
-//    if error != nil {
-//    println("Geocode failed with error: \(error.localizedDescription)")
-//    } else if placemarks.count > 0 {
-//    let placemark = placemarks[0] as! CLPlacemark
-//    
-//    
-//    println(placemark.location.coordinate.latitude);
-//    
-//    
-//    
-//    
-//    
-//    }
-//    })
-//    
-//    
-//}
 
 
 
