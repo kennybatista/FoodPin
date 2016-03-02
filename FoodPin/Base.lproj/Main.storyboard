@@ -225,8 +225,14 @@
                                 <segue destination="v3S-6Z-E2W" kind="unwind" unwindAction="undwindSegue:" id="hzb-7Q-dNq"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="nIj-kh-akL">
+                            <color key="tintColor" red="0.98599273990000003" green="0.98599273990000003" blue="0.98599273990000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="WZj-ib-8D9" id="l6F-rt-2yA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJq-kb-IdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="v3S-6Z-E2W" userLabel="Exit" sceneMemberID="exit"/>

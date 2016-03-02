@@ -8,8 +8,10 @@
 
 import UIKit
 
-class AddTableViewController: UITableViewController {
+class AddTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,21 +29,50 @@ class AddTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-  
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+
+    
+    
+    
+
+    
+    
+    //didSelectRowAtIndexPath: allows us to select cell from a tableView
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //indexPath.row : allows us to select cells, in our case we're selecting the first cell
         if indexPath.row == 0 {
-            if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            //If the photo library is available
+            if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
+                //instance of the controller, allows us to use it's methods
                 let imagePicker = UIImagePickerController()
+                //where to get the image from
+                imagePicker.sourceType = .PhotoLibrary
                 imagePicker.editing = false
-                imagePicker.sourceType = .Camera
                 
+                //Present the controller
                 self.presentViewController(imagePicker, animated: true, completion: nil)
+                
+                //who will notify the image picker that something was picked
+                imagePicker.delegate = self
             }
-            
-            
         }
+        //will deselect cells as soon as I select it, makes the tableview experience feel better
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    
+    //this function comes from the UIImagePickerController, allowing us to do something after selecting an image
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        //store the selected image inside the image view
+        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        imageView.clipsToBounds = true
+        
+        //Dismiss the controller
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+
+    
     
     
     /*
