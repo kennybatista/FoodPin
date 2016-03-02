@@ -19,7 +19,7 @@
 		25775A821C4ACDB20036A759 /* FoodPinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25775A811C4ACDB20036A759 /* FoodPinUITests.swift */; };
 		25775A901C4ACE790036A759 /* FoodPinTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25775A8F1C4ACE790036A759 /* FoodPinTableViewController.swift */; };
 		25AB995A1C80AC6400520402 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AB99591C80AC6400520402 /* MapViewController.swift */; };
-		25BAD0F51C7E2B1A00815238 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BAD0F41C7E2B1A00815238 /* AddTableViewController.swift */; };
+		25BAD0F51C7E2B1A00815238 /* c.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BAD0F41C7E2B1A00815238 /* c.swift */; };
 		25C126241C7A7A4F00302E75 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C126231C7A7A4F00302E75 /* DetailTableViewCell.swift */; };
 		25C126281C7AD6C500302E75 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C126271C7AD6C500302E75 /* ReviewViewController.swift */; };
 		25C1266F1C7D816C00302E75 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C1266E1C7D816C00302E75 /* ShareViewController.swift */; };
@@ -61,7 +61,7 @@
 		25775A831C4ACDB20036A759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25775A8F1C4ACE790036A759 /* FoodPinTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodPinTableViewController.swift; sourceTree = "<group>"; };
 		25AB99591C80AC6400520402 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		25BAD0F41C7E2B1A00815238 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
+		25BAD0F41C7E2B1A00815238 /* c.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = c.swift; sourceTree = "<group>"; };
 		25C126231C7A7A4F00302E75 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		25C126271C7AD6C500302E75 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		25C1266E1C7D816C00302E75 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 				25165E421C52B04D00BA4D54 /* DetailViewController.swift */,
 				25C126271C7AD6C500302E75 /* ReviewViewController.swift */,
 				25C1266E1C7D816C00302E75 /* ShareViewController.swift */,
-				25BAD0F41C7E2B1A00815238 /* AddTableViewController.swift */,
+				25BAD0F41C7E2B1A00815238 /* c.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -335,7 +335,7 @@
 				25AB995A1C80AC6400520402 /* MapViewController.swift in Sources */,
 				250D136C1C4C910A00DBE092 /* CustomTableViewCell.swift in Sources */,
 				25775A901C4ACE790036A759 /* FoodPinTableViewController.swift in Sources */,
-				25BAD0F51C7E2B1A00815238 /* AddTableViewController.swift in Sources */,
+				25BAD0F51C7E2B1A00815238 /* c.swift in Sources */,
 				25775A621C4ACDB20036A759 /* AppDelegate.swift in Sources */,
 				25C1266F1C7D816C00302E75 /* ShareViewController.swift in Sources */,
 				25165E431C52B04D00BA4D54 /* DetailViewController.swift in Sources */,

@@ -21,35 +21,68 @@ class MapViewController: UIViewController {
         //Forward Geocoding: Converting physical addresses into coordinates
         
              
-        let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString("436 beach 72nd street, arverne, ny, 11692", completionHandler: {
-            (placemarks, error) in
-//            let placemark = CLPlacemark()
-//            let coordinate = placemark.location?.coordinate
-            
-            if error != nil {
-                print("Geocode failded with error: \(error?.localizedDescription)")
-            } else {
-                if placemarks!.count > 0 {
-                    let placemark = placemarks![0] 
-                    print(placemark.location?.coordinate.latitude);
-                    
-                    let annotation = MKPointAnnotation()
-                    annotation.title = "Kenny'Home"
-                    annotation.coordinate = (placemark.location?.coordinate)!
-                    
-                    self.mapView.showAnnotations([annotation], animated: true)
-                    self.mapView.selectAnnotation(annotation, animated: true)
-                }
-            }
-        })
+//        let geoCoder = CLGeocoder()
+//        geoCoder.geocodeAddressString("436 beach 72nd street, arverne, ny, 11692", completionHandler: {
+//            (placemarks, error) in
+////            let placemark = CLPlacemark()
+////            let coordinate = placemark.location?.coordinate
+//            
+//            if error != nil {
+//                print("Geocode failded with error: \(error?.localizedDescription)")
+//            } else {
+//                if placemarks!.count > 0 {
+//                    let placemark = placemarks![0] 
+//                    print(placemark.location?.coordinate.latitude);
+//                    
+//                    let annotation = MKPointAnnotation()
+//                    annotation.title = "Kenny's Home"
+//                    annotation.coordinate = (placemark.location?.coordinate)!
+//                    
+//                    self.mapView.showAnnotations([annotation], animated: true)
+////                    self.mapView.selectAnnotation(annotation, animated: true)
+//                    
+//                }
+//            }
+//        })
         
   
-            
-            
-            
-            
-            
+        
+//        
+//        let geoCoder = CLGeocoder()
+//        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {
+//            (placemarks,error) in
+//            let placemark = CLPlacemark()
+//            let coordinate = placemark.location?.coordinate
+//            
+//            if error != nil {
+//                print("Geocode failed with error"
+//            }
+//        })
+//        
+        
+//            
+//        let geoCoder = CLGeocoder()
+//        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {
+//            (placemarks,error) in
+//            let placemark = CLPlacemark()
+//            let coordinate = placemark.location?.coordinate
+//            
+//            if error != nil {
+//                print("Geocode failed with error \(error?.localizedDescription)")
+//            }
+//            
+//            if placemarks!.count < 0 && placemarks != nil {
+//                
+//                
+//                
+//            }
+//            
+//        })
+        
+        
+        
+        
+    
             
             
 
