@@ -9,89 +9,56 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     var restaurant: Restaurant!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         self.mapView.delegate = self
 
         // Do any additional setup after loading the view.
         //Forward Geocoding: Converting physical addresses into coordinates
-        
-             
-//        let geoCoder = CLGeocoder()
-//        geoCoder.geocodeAddressString("436 beach 72nd street, arverne, ny, 11692", completionHandler: {
-//            (placemarks, error) in
-////            let placemark = CLPlacemark()
-////            let coordinate = placemark.location?.coordinate
-//            
-//            if error != nil {
-//                print("Geocode failded with error: \(error?.localizedDescription)")
-//            } else {
-//                if placemarks!.count > 0 {
-//                    let placemark = placemarks![0] 
-//                    print(placemark.location?.coordinate.latitude);
-//                    
-//                    let annotation = MKPointAnnotation()
-//                    annotation.title = "Kenny's Home"
-//                    annotation.coordinate = (placemark.location?.coordinate)!
-//                    
-//                    self.mapView.showAnnotations([annotation], animated: true)
-////                    self.mapView.selectAnnotation(annotation, animated: true)
-//                    
-//                }
-//            }
-//        })
-        
-  
-        
-//        
-//        let geoCoder = CLGeocoder()
-//        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {
-//            (placemarks,error) in
-//            let placemark = CLPlacemark()
-//            let coordinate = placemark.location?.coordinate
-//            
-//            if error != nil {
-//                print("Geocode failed with error"
-//            }
-//        })
-//        
-        
-//            
-//        let geoCoder = CLGeocoder()
-//        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {
-//            (placemarks,error) in
-//            let placemark = CLPlacemark()
-//            let coordinate = placemark.location?.coordinate
-//            
-//            if error != nil {
-//                print("Geocode failed with error \(error?.localizedDescription)")
-//            }
-//            
-//            if placemarks!.count < 0 && placemarks != nil {
-//                
-//                
-//                
-//            }
-//            
-//        })
-        
-        
-        
-        
-    
-            
-            
 
+        
+        
+        //Instance of CLGeocoder, allows us to forward or reverse geocode
+        let geoCoder = CLGeocoder()
+        //Initializing a forward geocode request
+        geoCoder.geocodeAddressString(restaurant.location) { (placemarks, error) -> Void in
             
+            //if there is an error
+            if error != nil {
+                print(error)
+                return
+            } else
+                //if there is a placemark ( greater than 0 says that there's a placemark in the array)
+                if placemarks?.count > 0 {
+                    //storing the first placemark in the array in a container( there's usually only one placemark object)
+                    let placemark = placemarks![0]
+                    
+                    //Annotation
+                    let annotation = MKPointAnnotation()
+                    annotation.title = self.restaurant.name
+                    annotation.subtitle = self.restaurant.type
+                    //where to show the annotation
+                    annotation.coordinate = (placemark.location?.coordinate)!
+                    
+                    //show the annotation
+                    self.mapView.showAnnotations([annotation], animated: true)
+                    //auto select the annotation
+                    self.mapView.selectAnnotation(annotation, animated: true)
+            }
+        }
         
         
-
+ 
         
     }
+    
+        
 
 
 

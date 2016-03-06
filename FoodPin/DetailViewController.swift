@@ -96,6 +96,14 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMap" {
+            let destinationController = segue.destinationViewController as! MapViewController
+            destinationController.restaurant = restaurant
+        }
+    }
+    
 //    override func preferredStatusBarStyle() -> UIStatusBarStyle {
 //        return .LightContent
 //    }

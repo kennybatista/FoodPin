@@ -71,7 +71,52 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-
+    
+    
+    //MARK: SAVE SECTION
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var typeTextField: UITextField!
+    
+    @IBOutlet weak var locationTextField: UITextField!
+    
+    @IBAction func yesButton(sender: UIButton) {
+        sender.backgroundColor = UIColor.grayColor()
+        
+        
+    }
+    
+    @IBAction func noButton(sender: UIButton) {
+        sender.backgroundColor = UIColor.redColor()
+    }
+    @IBAction func saveButton(sender: AnyObject) {
+        
+        
+        let nameTextFieldContainer = nameTextField.text
+        let typeTextFieldContainer = typeTextField.text
+        let locationTextFieldContainer = locationTextField.text
+        
+        
+        if nameTextFieldContainer == "" || typeTextFieldContainer == "" || locationTextFieldContainer == "" {
+            
+            let alert = UIAlertController(title: "Oops", message: "Please fill out all fields", preferredStyle: .Alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        } else {
+            print("Name : \(nameTextFieldContainer!)")
+            print("Type : \(typeTextFieldContainer!)")
+            print("Location: \(locationTextFieldContainer!)")
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+   
+        
+    }
     
     
     
