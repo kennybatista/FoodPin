@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
-class AddTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class AddTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
+    
+    var restaurant:Restaurant!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,9 +31,7 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-
+   
     
     
     
@@ -90,8 +92,9 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
     @IBAction func noButton(sender: UIButton) {
         sender.backgroundColor = UIColor.redColor()
     }
+    
+    //save button
     @IBAction func saveButton(sender: AnyObject) {
-        
         
         let nameTextFieldContainer = nameTextField.text
         let typeTextFieldContainer = typeTextField.text
@@ -114,8 +117,30 @@ class AddTableViewController: UITableViewController, UIImagePickerControllerDele
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         
-   
         
+        // If all fields are correctly filled in, extract the field value
+        // Create Restaurant Object and save to data store
+//        if let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext {
+//            
+//            restaurant = NSEntityDescription.insertNewObjectForEntityForName("Restaurant",
+//                inManagedObjectContext: managedObjectContext) as! Restaurant
+//            restaurant.name = nameTextField.text
+//            restaurant.type = typeTextField.text
+//            restaurant.location = locationTextField.text
+//            restaurant.image = UIImagePNGRepresentation(imageView.image!)
+//          
+//            //            restaurant.isVisited = NSNumber.convertFromBooleanLiteral(isVisited)
+//            
+//            //            var e: NSError?
+//            //            if managedObjectContext.save() != true {
+//            //                print("insert error: \(e!.localizedDescription)")
+//            //                return
+//            //            }
+//        }
+//        
+//        // Execute the unwind segue and go back to the home screen
+//        performSegueWithIdentifier("unwindToHomeScreen", sender: self)
+//    }
     }
     
     

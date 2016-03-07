@@ -30,7 +30,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         //Will update the image view after the image's data has been passed to the detail.
-        self.restaurantImageView!.image = UIImage(named: restaurant.image)
+        self.restaurantImageView!.image = UIImage(data: restaurant.image)
 //        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: self.restaurant.name, style: .Plain, target: nil, action: nil)
         title = self.restaurant.name
       
@@ -79,7 +79,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.mapButton.hidden = false
         case 3:
             cell.fieldLabel.text = "Been Here"
-            cell.fieldValue.text = (restaurant.isVisited) ? "Yes, I've been here before" : "No"
+            cell.fieldValue.text = (restaurant.isVisited.boolValue) ? "Yes, I've been here before" : "No"
         default:
             cell.fieldLabel.text = ""
             cell.fieldValue.text = ""
